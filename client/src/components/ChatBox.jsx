@@ -21,7 +21,7 @@ export default function ChatBox({
 
     return (
         <section
-            className="flex flex-col justify-between w-full max-w-[578px] h-[520px] rounded-[28px] shadow-xl border relative
+            className="flex flex-col justify-between w-full w-[578px] h-[400px] rounded-[20px] shadow-xl border relative
                  px-7 pt-7 pb-7"
             style={{
                 background: "linear-gradient(161deg, #111 50.91%, #3A68FF 171.4%)",
