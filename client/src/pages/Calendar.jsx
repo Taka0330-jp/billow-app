@@ -57,9 +57,7 @@ export default function CalendarPage() {
 
                     ]}
                 />
-                <p className="text-center text-sm text-white/60 mt-6">
-                    Drag & drop items anywhere on the page.
-                </p>
+                
             </div>
         </div>
     );
