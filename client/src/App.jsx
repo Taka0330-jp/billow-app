@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import IntroPage from "./pages/IntroPage";
+import Chat from "./pages/Chat";
+import Subscriptions from "./pages/Subscriptions";
+import Calendar from "./pages/Calendar";
+import Members from "./pages/Members";
+import BottomNav from "./components/BottomNav";
 
+function DashboardLayout({ children }) {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="relative min-h-screen bg-[url('/bg-stars.jpg')] bg-cover bg-center text-white flex flex-col items-center justify-center">
+      {/* Logo */}
+      <Link
+        to="/"
+        className="absolute top-6 left-10 text-3xl font-bold text-blue-400 hover:text-blue-300 transition"
+      >
+        Billow
+      </Link>
+
+      {/* page contents */}
+      <main className="flex-1 flex items-center justify-center w-full px-4">
+        {children}
+      </main>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
+    </div>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/dashboard" element={<DashboardLayout><Chat /></DashboardLayout>} />
+        <Route path="/dashboard/subscriptions" element={<DashboardLayout><Subscriptions /></DashboardLayout>} />
+        <Route path="/dashboard/calendar" element={<DashboardLayout><Calendar /></DashboardLayout>} />
+        <Route path="/dashboard/members" element={<DashboardLayout><Members /></DashboardLayout>} />
+        <Route path="/dashboard/setting" element={<DashboardLayout><h2 className="text-2xl font-bold text-center">Setting</h2></DashboardLayout>} />
+        <Route path="*" element={<IntroPage />} />
+      </Routes>
+    </Router>
+  );
+}
