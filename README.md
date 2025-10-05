@@ -33,5 +33,23 @@ ting with React and consistent styling with Tailwind CSS
 I learned the ability to manage projects from design to development within a short timeframe.
 Furthermore, by experiencing AI-driven automation, I gained an understanding of the potential for UX design utilizing LLM (Large Language Models).
 
+## How to run locally
+
+If your project structure contains a `client` folder (e.g. `/billow-app/client`), please use the following commands in the terminal:
+
+```bash
+cd client
+npm install
+npm run dev
+
+Then open the development server in your browser at:
+http://localhost:5173
+
+If the project files have already been moved to the root directory, simply run:
+npm install
+npm run dev
+
+---
+
 ## What's next for Billow
 We plan to add the following features going forward: Design for the members page and settings page. Drag-and-drop functionality for invoices on the chat page. Multi-user dashboards for teams. Ultimately, we aim to create a SaaS management tool that individuals and startups alike can use with confidence.
