@@ -42,14 +42,15 @@ cd client
 npm install
 npm run dev
 
-Then open the development server in your browser at:
+
+# Then open the development server in your browser at:
 http://localhost:5173
 
-If the project files have already been moved to the root directory, simply run:
+
+# If the project files have already been moved to the root directory, simply run:
 npm install
 npm run dev
-
----
+```
 
 ## What's next for Billow
 We plan to add the following features going forward: Design for the members page and settings page. Drag-and-drop functionality for invoices on the chat page. Multi-user dashboards for teams. Ultimately, we aim to create a SaaS management tool that individuals and startups alike can use with confidence.
