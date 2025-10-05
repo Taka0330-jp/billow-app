@@ -49,7 +49,7 @@ export default function BottomNav() {
   return (
     <nav
       className="
-        fixed left-1/2 -translate-x-1/2 bottom-0
+        fixed left-1/2 -translate-x-1/2 bottom-10
         w-[520px] max-w-[92vw] h-[4.313rem]   /* 69px */
         rounded-[87.5px] bg-[#1b1b1b]         /* frame-parent */
         flex flex-col items-center justify-end

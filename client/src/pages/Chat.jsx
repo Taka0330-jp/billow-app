@@ -1,19 +1,18 @@
-// client/src/pages/Chat.jsx
-import React from "react";
-import ChatBox from "../components/ChatBox.jsx";
+import SideBar from "../components/SideBar"; // 사이드바 임포트
+import ChatBox from "../components/ChatBox"; // 채팅 박스 임포트
+import BottomNav from "../components/BottomNav"; // 하단 네비게이션 임포트
 
 export default function Chat() {
-  return (
-    <div className="relative h-screen overflow-hidden">
-      {/* 사이드바 자리 (필요시 여기에 컴포넌트 배치) */}
+	return (
+		<div className="flex h-screen bg-white">
+			{/* 사이드바 */}
+			<SideBar />
 
-      {/* 본문 콘텐츠: 채팅 영역 */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-6">
-        <ChatBox />
-        <p className="text-center text-sm text-white/60 mt-4">
-          Drag & drop items anywhere on the page.
-        </p>
-      </div>
-    </div>
-  );
+			{/* 메인 영역: 채팅 박스와 하단 네비 */}
+			<main className="flex-1 flex flex-col">
+				<ChatBox />
+				<BottomNav />
+			</main>
+		</div>
+	);
 }
