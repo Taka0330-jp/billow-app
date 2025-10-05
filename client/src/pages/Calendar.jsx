@@ -1,13 +1,10 @@
 import CalendarGrid from "../components/CalendarGrid.jsx";
-// 画像ファイルのインポート
 import C4dIcon from "../assets/images/C4d.png";
 import AdobeAppsIcon from "../assets/images/Adobe Apps.png";
 import FigmaIcon from "../assets/images/Figma.png";
 import OctaneIcon from "../assets/images/Octane.png";
 import WebFlowIcon from "../assets/images/Webflow.png";
 
-// 画像専用のコンポーネントとしてシンプルに再定義
-// NOTE: CalendarGrid側で親のサイズが決められているため、w-full h-full でフィットさせる
 const ImageDot = ({ src, alt = "Event icon" }) => (
     <div className="w-3 h-3 md:w-6 md:h-6 flex items-center justify-center">
         <img
@@ -21,7 +18,7 @@ const ImageDot = ({ src, alt = "Event icon" }) => (
 export default function CalendarPage() {
     return (
         <div className="w-full flex justify-center">
-            {/* max-w-5xl に戻し、最初のデザインサイズに統一 */}
+
             <div className="w-full max-w-5xl">
                 <CalendarGrid
                     year={2025}
@@ -57,7 +54,7 @@ export default function CalendarPage() {
 
                     ]}
                 />
-                
+
             </div>
         </div>
     );

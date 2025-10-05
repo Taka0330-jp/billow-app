@@ -1,27 +1,78 @@
 import { Link } from "react-router-dom";
+import BillowLogo from "../assets/icons/Billow.svg";
+import LaptopMock from "../assets/images/MockBillow.png";
 
 export default function IntroPage() {
     return (
-        <section className="h-screen bg-[url('/bg-stars.jpg')] bg-cover bg-center flex flex-col items-center justify-center text-center text-white px-6">
-            {/* Logo */}
-            <h1 className="text-5xl font-bold text-blue-400 mb-6">Billow</h1>
+        <section
+            className="
+        relative h-screen w-full overflow-hidden
+        bg-white text-black
+        flex flex-col items-center
+      "
+        >
+            {/* ====== Top Logo ====== */}
+            <div className="w-full max-w-6xl px-6 pt-8">
+                <img
+                    src={BillowLogo}
+                    alt="Billow"
+                    className="h-8 w-auto"
+                    draggable={false}
+                />
+            </div>
 
-            {/* Description */}
-            <p className="max-w-xl text-gray-300 leading-relaxed mb-10">
-                Manage your team's subscriptions in one place.
-                Track spending, organize plans, and make smarter business decisions with AI-powered insights.
-            </p>
-
-            {/* CTA Button */}
-            <Link
-                to="/dashboard"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-8 py-3 rounded-full transition duration-200"
+            {/* ====== Hero Text ====== */}
+            <div
+                className="
+          relative z-10
+          flex flex-col items-center text-center gap-4
+          mt-[6vh] sm:mt-[8vh] lg:mt-[13vh]
+          px-6
+        "
             >
-                Open Dashboard
-            </Link>
+                <h1 className="text-center text-3xl sm:text-4xl lg:text-[42px] font-semibold leading-tight tracking-tight">
+                    Track team subscriptions with clarity.
+                </h1>
 
-            {/* Footer */}
-            <p className="text-gray-500 text-sm mt-12">© 2025 Billow Team</p>
+                <p className="mt-5 text-center  leading-tight tracking-tight text-[16px] leading-7 text-neutral-600 max-w-[55ch]">
+                    Billow centralizes your tools and billing in one place. Understand
+                    monthly spend, monitor who uses what, and make smarter decisions with
+                    AI-powered insights.
+                </p>
+
+                <Link
+                    to="/dashboard"
+                    className="
+            mt-8 inline-flex items-center justify-center
+            rounded-full px-8 py-3
+            bg-[#3B66FF] hover:bg-[#2f57e6]
+            text-white text-base font-medium
+            shadow-sm transition
+          "
+                >
+                    Open Dashboard
+                </Link>
+            </div>
+
+            {/* ====== Laptop Image ====== */}
+            <div
+                className="
+          absolute inset-x-0 bottom-[-230px]
+          flex justify-center
+          pointer-events-none select-none
+        "
+                aria-hidden="true"
+            >
+                <img
+                    src={LaptopMock}
+                    alt="Billow dashboard preview"
+                    className="w-[1100px] max-w-none"
+                    draggable={false}
+                />
+            </div>
+
+            {/* ====== Bottom Gradient Mask ====== */}
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
         </section>
     );
 }

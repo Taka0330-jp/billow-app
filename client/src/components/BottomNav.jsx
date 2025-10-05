@@ -7,9 +7,8 @@ import Gear from "../assets/icons/Gear.svg";
 
 const ActiveBar = ({ active }) => (
   <div
-    className={`self-stretch h-[0.125rem] ${
-      active ? "bg-[#3a68ff]" : "bg-transparent"
-    }`}
+    className={`self-stretch h-[0.125rem] ${active ? "bg-[#3a68ff]" : "bg-transparent"
+      }`}
   />
 );
 
@@ -20,7 +19,7 @@ const Item = ({ to, end, icon, label }) => (
         className={`${
           // frame-container 스타일
           isActive ? "text-white" : "text-[rgba(255,255,255,0.7)]"
-        } flex flex-col items-center gap-[0.375rem] text-center`}
+          } flex flex-col items-center gap-[0.375rem] text-center`}
         style={{ fontFamily: "var(--font-manrope)" }}
       >
         {/* chatdots-parent */}
@@ -28,9 +27,8 @@ const Item = ({ to, end, icon, label }) => (
           <img
             src={icon}
             alt={label}
-            className={`w-8 h-8 max-h-full ${
-              isActive ? "opacity-100" : "opacity-70"
-            }`}
+            className={`w-8 h-8 max-h-full ${isActive ? "opacity-100" : "opacity-70"
+              }`}
           />
           {/* 글자 */}
           <span className="relative w-full text-[0.75rem] leading-[1.4] font-medium">

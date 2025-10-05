@@ -1,8 +1,15 @@
 // src/components/SideBar.jsx
+import { useNavigate } from "react-router-dom";
 import BillowLogoUrl from "../assets/icons/Billow.svg";
 import ArrowIconUrl from "../assets/icons/ArrowUDownLeft.svg";
 
 export default function SideBar() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/"); // IntroPage へ戻る
+  };
+
   return (
     <aside
       className="
@@ -12,14 +19,15 @@ export default function SideBar() {
         flex flex-col
       "
     >
-      {/* 로고 */}
+      {/* ロゴ */}
       <div className="w-full">
         <img src={BillowLogoUrl} alt="Billow" className="w-[160px] h-auto" />
       </div>
 
-      {/* 하단 버튼 */}
+      {/* 下部ボタン */}
       <button
         type="button"
+        onClick={handleBackClick}
         className="
           mt-auto
           w-full rounded-[56px]
@@ -30,9 +38,11 @@ export default function SideBar() {
           text-[18px]
           transition-transform duration-200
         "
-        style={{ fontFamily: `"Manrope", ui-sans-serif, system-ui, sans-serif` }}
+        style={{
+          fontFamily: `"Manrope", ui-sans-serif, system-ui, sans-serif`,
+        }}
       >
-        <img src={ArrowIconUrl} alt="" className="w-8 h-8 shrink-0" />
+        <img src={ArrowIconUrl} alt="back icon" className="w-8 h-8 shrink-0" />
         <span
           className="
             relative
