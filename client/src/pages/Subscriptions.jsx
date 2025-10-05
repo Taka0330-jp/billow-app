@@ -5,7 +5,7 @@ import graphImg from "../assets/images/chart.png"; // 그래프 더미 이미지
 export default function Subscriptions() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white">
-      <section className="w-[640px] flex flex-col items-center gap-8 text-center">
+      <section className="w-[640px] flex flex-col items-center gap-6 text-center">
         {/* Title */}
         <h1 className="text-4xl font-semibold">Subscription</h1>
 
